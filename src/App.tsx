@@ -3,6 +3,7 @@ import { createTheme, CssBaseline } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
+import MainApp from "./components/MainApp";
 
 function App() {
   const theme = createTheme({
@@ -10,7 +11,7 @@ function App() {
       background: { default: "#ffffff", paper: "#ffffff" }
     },
     typography: {
-      fontFamily: "IBM Plex Sans"
+      fontFamily: "Poppins"
     },
     components: {
       MuiCssBaseline: {
@@ -29,6 +30,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/" element={<MainApp />}>
+            
+          </Route>
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

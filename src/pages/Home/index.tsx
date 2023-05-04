@@ -1,116 +1,127 @@
 import { Container, Box, Typography, Button } from "@mui/material";
-import {HowToRegRounded, FormatListBulletedRounded} from '@mui/icons-material';
+import Logo from "../../components/Logo";
 
 function Home() {
+    function handleLogoSize() {
+        if(document.body.clientWidth > 600) return 9;
+        return 14;
+    }
+
     return (
         <Container
             sx={{
-                "@media (min-width: 600px)": {
-                    padding: "0px"
-                },
+                background: "linear-gradient(to right, #5669CC , #A697EF)",
                 width: "100vw",
                 minWidth: "100vw",
                 height: "100vh",
                 minHeight: "100vh",
                 display: "flex",
-                justifyContent: "space-between",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
                 padding: "0px"
             }}
         >
+            <Logo fontSize={handleLogoSize()} />
+            <Typography
+                component="h2"
+                sx={{
+                    fontSize: "2vw",
+                    fontWeight: "bold",
+                    color: "#ffffff",
+                    marginTop: "30px",
+                    marginBottom: "20px",
+                    "@media (max-width: 600px)": {
+                        fontSize: "5.1vw"
+                    }
+                }}
+            >
+                Bem vindo!
+            </Typography>
+            <Typography
+                component="h3"
+                sx={{
+                    fontSize: "1.5vw",
+                    fontFamily: "Roboto",
+                    color: "#ffffff",
+                    marginBottom: "15px",
+                    "@media (max-width: 600px)": {
+                        fontSize: "4.5vw"
+                    }
+                }}
+            >
+                O que você deseja fazer?
+            </Typography>
             <Box
                 sx={{
-                    width: "58%",
-                    height: "100%",
+                    width: "60%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    margin: "0px"
+                    "@media (max-width: 600px)": {
+                        width: "80%",
+                        display: "block"
+                    }
                 }}
             >
-                <Box>
-                    <Typography
-                        component="h1"
-                        sx={{
-                            fontFamily: "Plus Jakarta Sans",
-                            fontSize: "9vw",
-                            fontStyle: "italic",
-                            lineHeight: "120%"
-                        }}>
-                        <Box
-                            component="span"
-                            fontWeight="fontWeightBold"
-                            color="#1e84ea"
-                            fontStyle="normal"
-                        >MUI
-                        </Box>
-                        Client
-                    </Typography>
-                    <Typography
-                        component="h2"
-                        sx={{
-                            width: "70%",
-                            fontSize: "1.6vw",
-                            fontStyle: "italic",
-                            marginLeft: "5px"
-                        }}
-                    >
-                        A melhor solução para cadastro e listagem de clientes.
-                    </Typography>
-                </Box>
-            </Box>
-            <Box
-                sx={{
-                    width: "42%",
-                    height: "100%",
-                    backgroundColor: "#1E84EA",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    margin: "0px"
-                }}
-            >
-                <Typography
-                    component="h2"
-                    sx={{
-                        fontSize: "1.7vw",
-                        color: "#ffffff",
-                        marginBottom: "20px"
-                    }}
-                >
-                    O que você deseja fazer?
-                </Typography>
                 <Button
+                    href="/app/novo-cliente"
                     variant="contained"
                     sx={{
-                        width: "70%",
-                        backgroundColor: "#004AAD",
-                        fontSize: "1.5vw",
+                        width: "40%",
+                        backgroundColor: "#ffffff",
+                        borderRadius: "1.7vw",
+                        marginRight: "20px",
+                        paddingY: "0.4vw",
+                        fontSize: "1.6vw",
                         fontWeight: "bold",
-                        color: "#ffffff",
-                        marginBottom: "20px",
-                        textTransform: "none"
+                        color: "#5669CC",
+                        textTransform: "none",
+                        textDecoration: "none",
+                        ":hover": {
+                            backgroundColor: "#344ED4",
+                            color: "#ffffff"
+                        },
+                        "@media (max-width: 600px)": {
+                            width: "100%",
+                            borderRadius: "4.1vw",
+                            fontSize: "4vw",
+                            paddingY: "1vw",
+                            marginBottom: "15px"
+                        }
                     }}
-                    endIcon={<HowToRegRounded />}
                 >
                     Cadastrar cliente
                 </Button>
                 <Button
+                    href="/app/clientes"
                     variant="contained"
                     sx={{
-                        width: "70%",
-                        backgroundColor: "#004AAD",
-                        fontSize: "1.5vw",
+                        width: "40%",
+                        backgroundColor: "#ffffff",
+                        borderRadius: "1.7vw",
+                        paddingY: "0.4vw",
+                        fontSize: "1.6vw",
                         fontWeight: "bold",
-                        color: "#ffffff",
-                        textTransform: "none"
+                        color: "#5669CC",
+                        textTransform: "none",
+                        textDecoration: "none",
+                        ":hover": {
+                            backgroundColor: "#344ED4",
+                            color: "#ffffff"
+                        },
+                        "@media (max-width: 600px)": {
+                            width: "100%",
+                            borderRadius: "4.1vw",
+                            fontSize: "4vw",
+                            paddingY: "1vw"
+                        }
                     }}
-                    endIcon={<FormatListBulletedRounded />}
                 >
                     Listar clientes
                 </Button>
             </Box>
-        </Container>
+        </Container >
     );
 }
 
