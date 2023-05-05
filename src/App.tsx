@@ -30,8 +30,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<MainApp />}>
-            
+          <Route path="/app" element={<MainApp />}>
           </Route>
         </Routes>
       </BrowserRouter>

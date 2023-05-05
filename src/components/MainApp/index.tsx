@@ -1,9 +1,17 @@
-function MainApp() {
-    // contexts
+import { Container } from "@mui/material";
+import Menu from "../Menu";
 
-    // render
+function MainApp() {
     return (
-        <h1>oi</h1>
+        <Container sx={{
+            background: "#ffffff",
+            minWidth: "100vw",
+            minHeight: "100vh",
+            position: "relative",
+            padding: "0px"
+        }}>
+            <Menu />
+        </Container>
     );
 }
 

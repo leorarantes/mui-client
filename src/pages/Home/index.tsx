@@ -2,15 +2,15 @@ import { Container, Box, Typography, Button } from "@mui/material";
 import Logo from "../../components/Logo";
 
 function Home() {
-    function handleLogoSize() {
-        if(document.body.clientWidth > 600) return 9;
-        return 14;
+    function handleLogoFontSize() {
+        if(document.body.clientWidth > 600) return {value: 7, unity: "vw"};
+        return {value: 14, unity: "vw"};
     }
 
     return (
         <Container
             sx={{
-                background: "linear-gradient(to right, #5669CC , #A697EF)",
+                background: "linear-gradient(to right, #5669CC, #A697EF)",
                 width: "100vw",
                 minWidth: "100vw",
                 height: "100vh",
@@ -22,15 +22,15 @@ function Home() {
                 padding: "0px"
             }}
         >
-            <Logo fontSize={handleLogoSize()} />
+            <Logo fontSize={handleLogoFontSize()} />
             <Typography
                 component="h2"
                 sx={{
                     fontSize: "2vw",
                     fontWeight: "bold",
                     color: "#ffffff",
-                    marginTop: "30px",
-                    marginBottom: "20px",
+                    marginTop: "40px",
+                    marginBottom: "30px",
                     "@media (max-width: 600px)": {
                         fontSize: "5.1vw"
                     }
@@ -44,7 +44,7 @@ function Home() {
                     fontSize: "1.5vw",
                     fontFamily: "Roboto",
                     color: "#ffffff",
-                    marginBottom: "15px",
+                    marginBottom: "20px",
                     "@media (max-width: 600px)": {
                         fontSize: "4.5vw"
                     }
@@ -65,7 +65,7 @@ function Home() {
                 }}
             >
                 <Button
-                    href="/app/novo-cliente"
+                    href="/app"
                     variant="contained"
                     sx={{
                         width: "40%",
