@@ -1,0 +1,106 @@
+.none, .error, .success, .warning {
+    width: fit-content;
+    max-width: 50vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 0px 20px 0px 20px;
+    transform-origin: right center;
+    transition: all 0.07s ease-in;
+}
+
+.error {
+    background-color: #D84646;
+}
+
+.success {
+    background-color: #4E9A51;
+}
+
+.warning {
+    background-color: #EFB917;
+}
+
+.error div:first-child, .success div:first-child, .warning div:first-child {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.error h1, .success h1, .warning h1 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FEFBFB;
+}
+
+.error div:first-child img, .success div:first-child img, .warning div:first-child img {
+    width: 20px;
+    color: #FEFBFB;
+    margin-right: 7px;
+}
+
+.error div:last-child, .success div:last-child, .warning div:last-child {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #FEFBFB;
+}
+
+.error div:last-child:hover, .success div:last-child:hover, .warning div:last-child:hover {
+    background-color: rgb(224, 144, 144);
+    color: #D84646;
+}
+
+.success div:last-child:hover {
+    background-color: #97f199;
+    color: #4E9A51;
+}
+
+.warning div:last-child:hover {
+    background-color: #f7d777;
+    color: #EFB917;
+}
+
+@media (max-width: 600px) {
+    .none, .error, .success {
+        width: 90vw;
+        max-width: 90vw;
+        height: 38px;
+        border-radius: 5px;
+        position: fixed;
+        bottom: 5px;
+        right: 5%;
+        left: 5%;
+        padding: 0px 10px 0px 10px;
+    }
+    
+    .error div:first-child, .success div:first-child, .warning div:first-child {
+        margin-right: 10px;
+    }
+    
+    .error h1, .success h1, .warning h1 {
+        font-size: 12px;
+    }
+    
+    .error div:first-child img, .success div:first-child img, .warning div:first-child img {
+        width: 14px;
+        margin-right: 4px;
+    }
+    
+    .error div:last-child, .success div:last-child, .warning div:last-child {
+        padding: 3px;
+        font-size: 13px;
+        color: #FEFBFB;
+    }
+}

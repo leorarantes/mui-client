@@ -65,7 +65,7 @@ function Home() {
                 }}
             >
                 <Button
-                    href="/app"
+                    href="/app/novo-cliente/informacoes-pessoais"
                     variant="contained"
                     sx={{
                         width: "40%",

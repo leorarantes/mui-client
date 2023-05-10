@@ -1,5 +1,7 @@
 import { Container } from "@mui/material";
+import { Outlet } from "react-router-dom";
 import Menu from "../Menu";
+import Alert from "../Alert";
 
 function MainApp() {
     return (
@@ -11,6 +13,8 @@ function MainApp() {
             padding: "0px"
         }}>
             <Menu />
+            <Outlet />
+            <Alert />
         </Container>
     );
 }

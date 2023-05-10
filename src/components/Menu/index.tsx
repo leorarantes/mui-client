@@ -35,9 +35,14 @@ function Menu() {
         return null;
     }
 
+    function handleContainerComponentType() {
+        if (document.body.clientWidth > 600) return "nav";
+        return "header";
+    }
+
     return (
         <Container
-            component="nav"
+            component={handleContainerComponentType()}
             sx={{
                 width: "250px",
                 height: "100vh",
@@ -49,6 +54,7 @@ function Menu() {
                 top: "0",
                 left: "0",
                 paddingY: "30px",
+                zIndex: "2",
                 "@media (max-width: 600px)": {
                     width: "100vw",
                     height: "8vh",
