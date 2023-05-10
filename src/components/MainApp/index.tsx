@@ -1,9 +1,21 @@
-function MainApp() {
-    // contexts
+import { Container } from "@mui/material";
+import { Outlet } from "react-router-dom";
+import Menu from "../Menu";
+import Alert from "../Alert";
 
-    // render
+function MainApp() {
     return (
-        <h1>oi</h1>
+        <Container sx={{
+            background: "#ffffff",
+            minWidth: "100vw",
+            minHeight: "100vh",
+            position: "relative",
+            padding: "0px"
+        }}>
+            <Menu />
+            <Outlet />
+            <Alert />
+        </Container>
     );
 }
 
