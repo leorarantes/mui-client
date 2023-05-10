@@ -1,30 +1,33 @@
 import { Box, Typography } from "@mui/material";
 
 interface LogoProps {
-    fontSize: number
+    fontSize: {
+        value: number,
+        unity: string
+    }
 }
 
-function Logo({fontSize}: LogoProps) {
+function Logo({fontSize: {value, unity}}: LogoProps) {
     return (
         <Box
             sx={{
-                maxHeight: `${(fontSize / 4) * 5}vw`,
+                maxHeight: `${(value / 4) * 5}${unity}`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 backgroundColor: "#000000",
-                borderRadius: `calc(${fontSize}vw + 1px)`,
-                paddingX: `${fontSize / 4.1}vw`
+                borderRadius: `calc(${value}${unity} + 1px)`,
+                paddingX: `${value / 4.1}${unity}`
             }}
         >
             <Typography
                 component="h1"
                 sx={{
                     fontFamily: "Plus Jakarta Sans",
-                    fontSize: `${fontSize}vw`,
+                    fontSize: `${value}${unity}`,
                     lineHeight: "100%",
                     color: "#ffffff",
-                    marginBottom: `${fontSize / 9}vw`
+                    marginBottom: `${value / 9}${unity}`
                 }}>
                 <Box
                     component="span"
